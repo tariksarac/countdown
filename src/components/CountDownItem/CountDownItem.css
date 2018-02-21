@@ -1,0 +1,14 @@
+.count-down-item {
+    border: 1px solid black;
+    width: 56px;
+    height: 58px;
+    padding: 2px;
+}
+
+.count-down-item .number{
+   font-size: 40px;
+}
+
+.count-down-item .period{
+   font-size: 10px;
+}

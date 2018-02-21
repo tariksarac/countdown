@@ -1,0 +1,24 @@
+.count-down-wrapper {
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count-down-wrapper input {
+    color: black;
+}
+
+.count-down-wrapper .count-down-container{
+  width: 300px;
+}
+
+.count-down-wrapper .count-down-container .start-text {
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.count-down-wrapper .count-down-container .count-down-items-container {
+    display: flex;
+    justify-content: space-between;
+}
