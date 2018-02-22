@@ -2,20 +2,27 @@
   text-align: center;
 }
 
-
-
 .App-header {
   background-color: #222;
   height: 50px;
   padding-left: 20px;
+  padding-right: 20px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.App-header .calendar{
- width: 300px;
+.App-header .title {
+  flex: 1;
+  color: #ffffff;
+}
+
+.App-header button {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  outline: none;
 }
 
 .App-title {
@@ -25,5 +32,3 @@
 .App-intro {
   font-size: large;
 }
-
-

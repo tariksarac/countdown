@@ -1,8 +1,15 @@
 .count-down-wrapper {
-  height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.count-down-wrapper .calendar{
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
 .count-down-wrapper input {
@@ -16,6 +23,13 @@
 .count-down-wrapper .count-down-container .start-text {
     text-align: left;
     padding-bottom: 5px;
+}
+
+.count-down-wrapper .count-down-container .message {
+    text-align: center;
+    height: 10px;
+    padding-top: 5px;
+    color: rgb(221, 51, 51);
 }
 
 .count-down-wrapper .count-down-container .count-down-items-container {

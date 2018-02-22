@@ -4,18 +4,16 @@ import './CountDownWrapper.css';
 import CountDownItem from '../CountDownItem/index';
 import { DatePicker, MuiThemeProvider } from 'material-ui';
 import { muiTheme } from '../../utils/constants';
+import {strings} from "../../utils/strings";
 
 class CountDownWrapper extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      elapsedTime: null
+      elapsedTime: null,
+      message: strings.SELECT_DATE
     };
-  }
-
-  componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
@@ -34,7 +32,11 @@ class CountDownWrapper extends React.Component {
     let elepsed = givenTime - timeNow;
 
     if (elepsed > 0) {
-      this.setState({ elapsedTime: elepsed });
+      this.setState({ elapsedTime: elepsed, message: null });
+        this.timerID = setInterval(() => this.tick(), 1000);
+    } else {
+        this.setState({ elapsedTime: null, message: strings.FUTURE_DATE });
+        this.timerID && clearInterval(this.timerID);
     }
   };
 
@@ -43,9 +45,6 @@ class CountDownWrapper extends React.Component {
   };
 
   render() {
-    if (this.state.elapsedTime === null) {
-      return <div>Select date</div>;
-    }
 
     let msDiff = this.state.elapsedTime;
     let days = parseInt(msDiff / (24 * 3600 * 1000));
@@ -54,25 +53,25 @@ class CountDownWrapper extends React.Component {
     let secs = parseInt(msDiff / 1000 - mins * 60 - days * 24 * 60 * 60 - hours * 60 * 60);
 
     return (
-      <div className="count-down-wrapper" style={{ position: 'relative' }}>
-        <div className="calendar" style={{ position: 'absolute', top: '10px', left: '20px' }}>
+      <div className="count-down-wrapper">
+        <div className="calendar">
           <MuiThemeProvider muiTheme={muiTheme}>
             <DatePicker
               onChange={this.handleChange}
-              hintText="Black Friday date"
+              hintText={strings.CALENDAR_TITLE}
               container="inline"
-              textFieldStyle={{ width: '100%', borderBottom: 0 }}
             />
           </MuiThemeProvider>
         </div>
         <div className="count-down-container">
-          <div className="start-text">STARTS IN</div>
+          <div className="start-text">{strings.STARTS_IN}</div>
           <div className="count-down-items-container">
-            <CountDownItem time={days} period={'days'} />
-            <CountDownItem time={hours} period={'hours'} />
-            <CountDownItem time={mins} period={'minutes'} />
-            <CountDownItem time={secs} period={'seconds'} />
+            <CountDownItem time={days} period={strings.DAYS} />
+            <CountDownItem time={hours} period={strings.HOURS} />
+            <CountDownItem time={mins} period={strings.MINUTES} />
+            <CountDownItem time={secs} period={strings.SECONDS} />
           </div>
+          <div className="message">{this.state.message}</div>
         </div>
       </div>
     );
