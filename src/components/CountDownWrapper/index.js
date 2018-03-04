@@ -69,7 +69,7 @@ class CountDownWrapper extends React.Component {
             <CountDownItem time={days} period={strings.DAYS} />
             <CountDownItem time={hours} period={strings.HOURS} />
             <CountDownItem time={mins} period={strings.MINUTES} />
-            <CountDownItem time={secs} period={strings.SECONDS} />
+            <CountDownItem time={secs} period={strings.SECONDS } />
           </div>
           <div className="message">{this.state.message}</div>
         </div>

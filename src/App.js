@@ -30,7 +30,7 @@ class App extends Component {
           <button onClick={this.setLanguage}>{this.state.selectedLanguage}</button>
         </header>
         <main>
-          <CountDownWrapper />
+          <CountDownWrapper/>
         </main>
       </div>
     );

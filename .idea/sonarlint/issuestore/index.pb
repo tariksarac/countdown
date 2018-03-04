@@ -19,3 +19,5 @@ d
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 X
 (src/components/CountDownWrapper/index.js,4/3/43bdb748b3011fbd80b30539bb77f71e46c566b4
+D
+src/utils/strings.js,e/6/e6939a57db0d37083de0cdebf29f9352ff6349bd
